@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Oracle User Password Request</title>
+
+<style type="text/css">
+form  { display: table;      }
+p     { display: table-row;  }
+label { display: table-cell; width: 250px}
+input { display: table-cell; }
+</style>
+
+
+</head>
+
+<body>
+
+<h2><b><font color="red">Oracle Database User Management Self Service</font></b></h2>
+
+<form name="oraUserManager" action="OraUserManager" method="POST"  onsubmit="valthisform();">
+
+<br>
+<p><label><b>LAN ID AND PASSWORD</b></label></p>
+<p><label><font color="red">(of your PC/Laptop)</font></label></p>
+
+<br>
+<p><label>LAN Id</label> <input type="text" name="lanId" required /></p>
+<p><label>LAN Password</label> <input type="password" name="lanPassword"  required /></p>
+<br>
+<p><label>Outlook Display Name</label> <input type="text" name="displayName" required /> Example: MarkX.Bhat2 </p>
+
+<br>
+
+<p><label><b>DATABASE USER DETAILS</b></label></p>
+<p><label><font color="red">(all values required) </font></label></p>
+<br>
+<p><label>Database User Id</label><input type="text" name="dbUserId"  required /></p>
+<p><label>Database Or Service Name</label> <input type="text" name="dbServiceOrSID"  required /></p>
+<p><label>Host or Scan Name</label> <input type="text" name="dbScanOrHost"  required /></p>
+<p><label>Database Port </label> <input type="text" name="port"  required /></p>
+
+<br>
+
+<p><label><b>ACTION</b></label></p>
+<p><label><font color="red">(choose at least one) </font></label></p>
+<p><label><font color="blue">New Password required for Reset </font></label></p>
+<br>
+<p><label>Unlock Account</label><input type="checkbox" id="actionUnlock"  name="action"  value="unlock" /></p>
+<p><label>Password Reset</label><input type="checkbox" id="actionPwReset" name="action"  value="pwReset" /></p>
+<p><label>DB New Password (for reset)</label> <input type="password" id="dbNewPw" name="dbNewPw" /> </p>
+<br>
+
+<button onclick="submit">Submit</button>
+
+<script>
+<!---
+function valthisform()
+{
+	var checkboxes=document.getElementsByName("action");
+    var okay=false;
+    for(var i=0,l=checkboxes.length;i<l;i++)
+    {   	
+        if(checkboxes[i].checked)
+        {
+            okay=true;
+            break;
+        }
+    }
+    if (!okay) 
+    { 
+    	alert("ERR - Please choose at least one action");
+    	event.preventDefault(); 
+
+    }
+  	
+    if ((document.getElementById('actionPwReset').checked) && 
+		  (document.getElementById('dbNewPw').value.length == 0))
+	  {
+	  	alert ("ERR - Provide DB new password or de-select password reset");
+	  	event.preventDefault();
+	  }
+
+}
+-->
+</script>
+
+</form>
+</body>
+</html>

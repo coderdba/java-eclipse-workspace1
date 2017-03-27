@@ -1,0 +1,5 @@
+Drivers, JARs and WARs needed
+
+Oracle JDBC Thin driver - odbc7.jar (used 12c version here)
+Oracle xsu12.jar - For OracleXMLQuery etc (found in $ORACLE_HOME/lib - used 12c version here)
+Oracle xmlparserv2.jar - For xml exceptions (found in $ORACLE_HOME/lib - used 12c version here)
