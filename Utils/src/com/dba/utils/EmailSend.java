@@ -10,7 +10,7 @@ public class EmailSend
  public static void main(String [] args){  
       String to = "myemail@yahoo.com";
       String from = "myemail@laptop.com"; // a phony/realfrom address
-      String host = "mailhost.target.com";
+      String host = "mailhost.x.com";
  
      //Get the session object  
       Properties properties = System.getProperties();  
